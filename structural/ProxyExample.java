@@ -11,7 +11,7 @@ public class ProxyExample {
         reader1.read("Aboba");
         InvocationHandler invocationHandler = new ReaderInvocationHandler();
         Object result = Proxy.newProxyInstance(
-                Main.class.getClassLoader(),
+                ProxyExample.class.getClassLoader(),
                 new Class[]{Reader.class},
                 invocationHandler);
         ((Reader) result).read("Hello");
